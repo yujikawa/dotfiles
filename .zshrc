@@ -92,6 +92,8 @@ esac
 
 alias jn="jupyter notebook"
 alias jl="jupyter lab"
+alias py="python"
+alias ipy="ipython"
 
 if [ -x /usr/bin/ptrash ]
 then
