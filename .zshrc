@@ -90,6 +90,9 @@ linux*|cygwin)
     ;;
 esac
 
+alias jn="jupyter notebook"
+alias jl="jupyter lab"
+
 if [ -x /usr/bin/ptrash ]
 then
     alias rm='ptrash -i'
@@ -186,3 +189,7 @@ function ggle(){
     esac
 }
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PIPENV_VENV_IN_PROJECT=true
