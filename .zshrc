@@ -94,6 +94,7 @@ alias jn="jupyter notebook"
 alias jl="jupyter lab"
 alias py="python"
 alias ipy="ipython"
+alias mps="mix phx.server"
 
 if [ -x /usr/bin/ptrash ]
 then
