@@ -1,0 +1,51 @@
+# vi風の操作
+$VI_MODE = True
+# Ctrl + D で終了しない
+$IGNOREEOF = True
+# tabではなく空白4つ
+$INDENT = "    "
+# 補完時に大小区別しない
+$CASE_SENSITIVE_COMPLETIONS = False
+# 補完選択Enterで即実行しない
+$COMPLETIONS_CONFIRM = True
+# 連続重複コマンドを保存しない
+# $HISTCONTROL = (ignoredups)
+# 括弧を補完
+$XONSH_AUTOPAIR = True
+# ディレクトリ名を入力すればcdできる
+$AUTO_CD = True
+# エラー全て吐くように
+$XONSH_SHOW_TRACEBACK = True
+# プロンプトの設定タイムアウトのメッセージ抑制
+$SUPPRESS_BRANCH_TIMEOUT_MESSAGE = True
+
+# 見た目ウザかったら切か変更する
+# 参考:http://xon.sh/tutorial.html#customizing-the-prompt
+# プロンプト上には場所だけ出す
+$PROMPT = "{INTENSE_YELLOW}[ {cwd} ] {GREEN}$ "
+# 下部にuser, host情報を追加
+$BOTTOM_TOOLBAR = "{BACKGROUND_WHITE}{BLACK}{user}@{hostname}"
+# 右にbranch情報
+$RIGHT_PROMPT = "{curr_branch}"
+# lsコマンドの結果の見た目
+$LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30"
+
+# えいりあす
+aliases["lt"] = "ls -ltr"
+aliases["l"] = "ls -ltr"
+aliases["la"] = "ls -la"
+aliases["ll"] = "ls -l"
+aliases["so"] = "source"
+aliases["v"] = "vim"
+aliases["vi"] = "vim"
+aliases["vx"] = "vim ~/.xonshrc"
+aliases["vv"] = "vim ~/.vimrc"
+aliases["vs"] = "vim /etx/ssh/ssh_config"
+aliases["cp"] = "cp -i"
+aliases["rm"] = "rm -i"
+aliases["ju"] = "jupyter notebook"
+
+#$PYENV_ROOT="$HOME/.pyenv"
+#$PATH="$PYENV_ROOT/bin:$PATH"
+#"$(pyenv init -)"
+#$PIPENV_VENV_IN_PROJECT=true
