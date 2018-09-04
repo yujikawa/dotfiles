@@ -121,6 +121,7 @@ export MANPATH=$MANPATH
 export EDITOR=vim
 export PAGER=less
 export LESS='-R -X'
+export PS1="~$ "
 
 # completions
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -197,3 +198,15 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PIPENV_VENV_IN_PROJECT=true
 #xonsh
+
+bindkey '^]' peco-src 
+
+function peco-src() { 
+  local src=$( ghq list --full-path | peco --query "$LBUFFER") 
+  if [ -n "$src" ]; then 
+    BUFFER="cd $src"
+    zle accept-line 
+  fi 
+  zle -R -c 
+  } 
+  zle -N peco-src
