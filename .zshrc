@@ -114,7 +114,7 @@ alias g="git"
 alias be="bundle exec"
 alias td="mkdir ~/tmp/$(date '+%Y%m%d-%H%M') && cd ~/tmp/$(date '+%Y%m%d-%H%M')"
 
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/work
 export LANG=ja_JP.UTF-8
 export PATH=$PATH:$GOPATH/bin
 export MANPATH=$MANPATH
@@ -210,3 +210,7 @@ function peco-src() {
   zle -R -c 
   } 
   zle -N peco-src
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
