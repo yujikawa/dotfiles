@@ -95,6 +95,7 @@ alias jl="jupyter lab"
 alias py="python"
 alias ipy="ipython"
 alias mps="mix phx.server"
+alias playnew="sbt new playframework/play-scala-seed.g8"
 
 if [ -x /usr/bin/ptrash ]
 then
@@ -214,3 +215,11 @@ function peco-src() {
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
+
+export PATH="$PATH:/usr/local/flutter/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH:/usr/local/google-cloud-sdk/bin"
+export PATH="$HOME/.goenv/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
+
+eval "$(goenv init -)"
