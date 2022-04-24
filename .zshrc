@@ -162,12 +162,6 @@ function ggle(){
     esac
 }
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-export PIPENV_VENV_IN_PROJECT=true
-#xonsh
-
 bindkey '^]' peco-src 
 
 function peco-src() { 
@@ -181,3 +175,18 @@ function peco-src() {
   zle -N peco-src
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
+eval "$(pyenv init -)"
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+export PIPENV_VENV_IN_PROJECT=true
+
+# If your pyenv has error, please do this cmd.
+# sudo rm -rf /Library/Developer/CommandLineTools
+# xcode-select --install
+# brew reinstall zlib bzip2
