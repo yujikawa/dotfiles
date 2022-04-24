@@ -94,8 +94,6 @@ alias jn="jupyter notebook"
 alias jl="jupyter lab"
 alias py="python"
 alias ipy="ipython"
-alias mps="mix phx.server"
-alias playnew="sbt new playframework/play-scala-seed.g8"
 
 if [ -x /usr/bin/ptrash ]
 then
@@ -133,37 +131,7 @@ then
     eval "$(pyenv init -)"
 fi
 
-# plenv
-if [ -d $HOME/.plenv ]
-then
-    export PATH="$HOME/.plenv/bin:$HOME/.plenv/shims:$PATH"
-    eval "$(plenv init -)"
-fi
 
-# rbenv
-if [ -d $HOME/.rbenv ]
-then
-    export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-    eval "$(rbenv init -)"
-    if [ -f $HOME/.rbenv/completions/rbenv.zsh ]
-    then
-        source $HOME/.rbenv/completions/rbenv.zsh
-    fi
-fi
-
-# nodebrew
-if [ -d $HOME/.nodebrew ]
-then
-    export PATH=$HOME/.nodebrew/current/bin:$PATH
-fi
-
-# mysqlenv
-[ -f ~/.mysqlenv/etc/bashrc ] && source ~/.mysqlenv/etc/bashrc
-
-eval "$(direnv hook zsh)"
-
-export _Z_CMD=j
-#source $HOME/.zsh/z/z.sh
 
 # function
 # pecoでzshのコマンド履歴検索
@@ -212,14 +180,4 @@ function peco-src() {
   } 
   zle -N peco-src
 
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
-
-export PATH="$PATH:/usr/local/flutter/bin"
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-export PATH="$PATH:/usr/local/google-cloud-sdk/bin"
-export PATH="$HOME/.goenv/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
-
-eval "$(goenv init -)"
